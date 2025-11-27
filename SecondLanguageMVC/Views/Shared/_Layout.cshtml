@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html lang="@(ViewContext.RouteData.Values["lang"] ?? "th")">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewData["Title"] - Second Language</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <header class="border-bottom mb-3">
+        <div class="container d-flex justify-content-between align-items-center py-2">
+            <div class="fw-bold">@ViewData["LogoText"]</div>
+
+            <div class="lang-switcher" aria-label="Language selector">
+                <button type="button" class="lang-btn btn btn-sm btn-link px-2" data-lang="en">EN</button>
+                <span>|</span>
+                <button type="button" class="lang-btn btn btn-sm btn-link px-2" data-lang="th">TH</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/lang-switch.js"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

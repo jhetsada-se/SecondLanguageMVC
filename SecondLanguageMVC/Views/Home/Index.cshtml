@@ -1,0 +1,20 @@
+﻿@{
+    ViewData["Title"] = ViewData["TitleText"];
+}
+
+<div class="container mt-4">
+    <h1>@ViewData["TitleText"]</h1>
+
+    <p>@ViewData["BodyText"]</p>
+
+    <hr />
+
+    <p>
+        Current URL:
+        <code>@Context.Request.Path</code>
+    </p>
+
+    <p>
+        @ViewData["FooterText"]
+    </p>
+</div>
